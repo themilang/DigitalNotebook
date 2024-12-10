@@ -28,41 +28,39 @@ export default function SourceCodeForm() {
       <p className='text-gray-600'>Enter your Github username and email to access the source code. <br />
 
 </p>
-      <form onSubmit={handleSubmit} className="flex  mt-3 gap-2 md:flex-row flex-col">
-        <div className='  '>
-          
-          <input
-            type="text"
-            id="username"
-            name="username"
-            placeholder='Github username'
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            required
-            className="mt-1 py-2 px-2   rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-          />
-        </div>
-        <div>
-        
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder='Email'
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-            className="mt-1 py-2 px-2   rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-          />
-        </div>
-        <button
-          type="submit"
-          className="w-full  text-nowrap bg-blue-600 text-white py-1 px-6 text-xs rounded-md hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-          disabled={isSubmitting}
-        >
-          {isSubmitting ? 'Submitting...' : 'Get Source Code'}
-        </button>
-      </form>
+<form onSubmit={handleSubmit} className="flex flex-col gap-3 md:flex-row md:gap-2 mt-3">
+  <div className="w-full">
+    <input
+      type="text"
+      id="username"
+      name="username"
+      placeholder="GitHub username"
+      value={username}
+      onChange={(e) => setUsername(e.target.value)}
+      required
+      className="w-full py-2 px-3 rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+    />
+  </div>
+  <div className="w-full">
+    <input
+      type="email"
+      id="email"
+      name="email"
+      placeholder="Email"
+      value={email}
+      onChange={(e) => setEmail(e.target.value)}
+      required
+      className="w-full py-2 px-3 rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+    />
+  </div>
+  <button
+    type="submit"
+    className="w-full bg-blue-600 text-white py-2 px-6 rounded-md hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 text-sm"
+    disabled={isSubmitting}
+  >
+    {isSubmitting ? 'Submitting...' : 'Get Source Code'}
+  </button>
+</form>
       {successMessage && (
         <p className="mt-4 text-sm text-green-600">
           {successMessage}
