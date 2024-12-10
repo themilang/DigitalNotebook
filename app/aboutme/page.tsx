@@ -20,7 +20,7 @@ export default function AboutUs() {
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-3">Welcome to milanghimire.info.np</h2>
           <p className="text-gray-600">
-            At <strong>milanghimire.info.np</strong>, we are passionate about sharing knowledge, showcasing creativity, and making meaningful connections through our content. This platform serves as a window into my journey as a professional and a creative individual. Whether you're here to explore my portfolio or dive into thought-provoking blogs, there's something for everyone.
+            At <strong>milanghimire.info.np</strong>, we are passionate about sharing knowledge, showcasing creativity, and making meaningful connections through our content. This platform serves as a window into my journey as a professional and a creative individual. Whether you&apos;re here to explore my portfolio or dive into thought-provoking blogs, there&apos;s something for everyone.
           </p>
         </section>
 
@@ -46,7 +46,7 @@ export default function AboutUs() {
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-3">What We Offer</h2>
           <p className="text-gray-600">
-            This platform is a blend of creativity, professionalism, and passion. Here’s what you can expect:
+            This platform is a blend of creativity, professionalism, and passion. Here&apos;s what you can expect:
           </p>
           <ul className="list-disc list-inside text-gray-600">
             <li>
@@ -64,7 +64,7 @@ export default function AboutUs() {
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-3">Why Choose Us?</h2>
           <p className="text-gray-600">
-            <strong>milanghimire.info.np</strong> is more than just a website; it's a reflection of my dedication to excellence, learning, and growth. By exploring this platform, you'll find:
+            <strong>milanghimire.info.np</strong> is more than just a website; it&apos;s a reflection of my dedication to excellence, learning, and growth. By exploring this platform, you&apos;ll find:
           </p>
           <ul className="list-disc list-inside text-gray-600">
             <li>A unique perspective rooted in experience and creativity.</li>
@@ -76,11 +76,15 @@ export default function AboutUs() {
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-3">Get in Touch</h2>
           <p className="text-gray-600">
-            I’d love to hear from you! Whether you have a question, want to collaborate, or simply want to connect, feel free to reach out:
+            I&apos;d love to hear from you! Whether you have a question, want to collaborate, or simply want to connect, feel free to reach out:
           </p>
           <ul className="list-disc list-inside text-gray-600">
-            <li>Email: <a href="mailto:your-milanghimireinfo@gmail.com" className="text-blue-600 hover:underline">milanghimireinfo@gmail.com</a></li>
-            <li>Social Media: Follow me on <a href="#" className="text-blue-600 hover:underline">Twitter</a> and <a href="#" className="text-blue-600 hover:underline">LinkedIn</a>.</li>
+            <li>
+              Email: <a href="mailto:milanghimireinfo@gmail.com" className="text-blue-600 hover:underline">milanghimireinfo@gmail.com</a>
+            </li>
+            <li>
+              Social Media: Follow me on <a href="https://www.linkedin.com/in/milan-ghimire-090b72273" className="text-blue-600 hover:underline">LinkedIn</a>.
+            </li>
           </ul>
         </section>
 

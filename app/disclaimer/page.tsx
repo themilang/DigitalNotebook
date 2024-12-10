@@ -43,17 +43,17 @@ export default function Disclaimer() {
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-3">Advertisement Disclaimer</h2>
           <p className="text-gray-600">
-            This website may feature advertisements, including those served by Google AdSense or other third-party networks. These advertisements help support the maintenance of this platform. However, I do not control the content, accuracy, or functionality of the ads displayed. Clicking on any advertisement will redirect you to the advertiser's website, and I am not responsible for any issues or losses resulting from interactions with these third-party sites.
+            This website may feature advertisements, including those served by Google AdSense or other third-party networks. These advertisements help support the maintenance of this platform. However, I do not control the content, accuracy, or functionality of the ads displayed. Clicking on any advertisement will redirect you to the advertiser&apos;s website, and I am not responsible for any issues or losses resulting from interactions with these third-party sites.
           </p>
           <p className="text-gray-600">
-            Google AdSense uses cookies to serve ads based on a user's previous visits to this site or other sites on the internet. Users can opt out of personalized advertising by visiting the <a href="https://www.google.com/settings/ads" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Google Ads Settings</a>.
+            Google AdSense uses cookies to serve ads based on a user&apos;s previous visits to this site or other sites on the internet. Users can opt out of personalized advertising by visiting the <a href="https://www.google.com/settings/ads" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Google Ads Settings</a>.
           </p>
         </section>
 
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-3">Copyright and Intellectual Property</h2>
           <p className="text-gray-600">
-            Unless explicitly stated otherwise, all content on <strong>milanghimire.info.np</strong>, including text, images, graphics, and code, is the intellectual property of the website owner. Unauthorized reproduction, modification, distribution, or use of this content is strictly prohibited. If you wish to use any part of this website's content, please contact me for permission.
+            Unless explicitly stated otherwise, all content on <strong>milanghimire.info.np</strong>, including text, images, graphics, and code, is the intellectual property of the website owner. Unauthorized reproduction, modification, distribution, or use of this content is strictly prohibited. If you wish to use any part of this website&apos;s content, please contact me for permission.
           </p>
         </section>
 
@@ -91,12 +91,10 @@ export default function Disclaimer() {
             If you have any questions or concerns regarding this disclaimer, please feel free to contact me:
           </p>
           <ul className="list-disc list-inside text-gray-600">
-            <li>Email: <a href="mailto:your-milanghimireinfo@gmail.com" className="text-blue-600 hover:underline">milanghimireinfo@gmail.com</a></li>
+            <li>Email: <a href="mailto:milanghimireinfo@gmail.com" className="text-blue-600 hover:underline">milanghimireinfo@gmail.com</a></li>
             <li>Website: <Link href="/" className="text-blue-600 hover:underline">milanghimire.info.np</Link></li>
           </ul>
         </section>
-
-    
       </div>
     </section>
   )

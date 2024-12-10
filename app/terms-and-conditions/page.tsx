@@ -34,7 +34,7 @@ export default function TermsAndConditions() {
           <ul className="list-disc list-inside text-gray-600">
             <li>Access the site content for personal and non-commercial use only.</li>
             <li>Not attempt to gain unauthorized access to any part of the website.</li>
-            <li>Not engage in any activity that could harm, disrupt, or interfere with the website's functionality.</li>
+            <li>Not engage in any activity that could harm, disrupt, or interfere with the website&apos;s functionality.</li>
           </ul>
         </section>
 
@@ -62,7 +62,7 @@ export default function TermsAndConditions() {
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-3">Disclaimer of Warranties</h2>
           <p className="text-gray-600">
-            All content on <strong>milanghimire.info.np</strong> is provided "as is" without any warranties, express or implied. I do not guarantee the accuracy, reliability, or completeness of the content. Your use of the website is at your own risk.
+            All content on <strong>milanghimire.info.np</strong> is provided &quot;as is&quot; without any warranties, express or implied. I do not guarantee the accuracy, reliability, or completeness of the content. Your use of the website is at your own risk.
           </p>
         </section>
 

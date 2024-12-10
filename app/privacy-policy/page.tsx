@@ -29,8 +29,8 @@ export default function PrivacyPolicy() {
             <li>CCPA (California Consumer Privacy Act - USA)</li>
             <li>CALOPPA (California Online Privacy Protection Act - USA)</li>
             <li>PIPEDA (Personal Information Protection and Electronic Documents Act - Canada)</li>
-            <li>Australia's Privacy Act (1988)</li>
-            <li>Nepal’s Privacy Act (2018)</li>
+            <li>Australia&apos;s Privacy Act (1988)</li>
+            <li>Nepal&apos;s Privacy Act (2018)</li>
             <li>UK Data Protection Act (2018 - England)</li>
           </ul>
           <p className="text-gray-600 mt-4">
@@ -59,7 +59,7 @@ export default function PrivacyPolicy() {
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-3">Global Privacy Compliance</h2>
           <p className="text-gray-600">
-            <strong>milanghimire.info.np</strong> strives to comply with international privacy standards. Here's how the policy aligns with specific regulations:
+            <strong>milanghimire.info.np</strong> strives to comply with international privacy standards. Here&apos;s how the policy aligns with specific regulations:
           </p>
           <ul className="list-disc list-inside text-gray-600">
             <li>
@@ -75,10 +75,10 @@ export default function PrivacyPolicy() {
               <strong>PIPEDA (Canada):</strong> Personal information is handled with consent, and users can access, update, or withdraw consent regarding their data.
             </li>
             <li>
-              <strong>Australia's Privacy Act:</strong> Personal data is collected and managed in compliance with the 13 Australian Privacy Principles (APPs).
+              <strong>Australia&apos;s Privacy Act:</strong> Personal data is collected and managed in compliance with the 13 Australian Privacy Principles (APPs).
             </li>
             <li>
-              <strong>Nepal’s Privacy Act:</strong> Personal data is processed with respect to confidentiality and privacy, following the data privacy and security guidelines established in Nepal.
+              <strong>Nepal&apos;s Privacy Act:</strong> Personal data is processed with respect to confidentiality and privacy, following the data privacy and security guidelines established in Nepal.
             </li>
             <li>
               <strong>UK Data Protection Act:</strong> Personal data is processed in accordance with the UK GDPR and the Data Protection Act of 2018.
@@ -128,7 +128,7 @@ export default function PrivacyPolicy() {
             If you have any questions or concerns regarding this Privacy Policy, please contact me:
           </p>
           <ul className="list-disc list-inside text-gray-600">
-            <li>Email: <a href="mailto:your-milanghimireinfo@gmail.com" className="text-blue-600 hover:underline">milanghimireinfo@gmail.com</a></li>
+            <li>Email: <a href="mailto:milanghimireinfo@gmail.com" className="text-blue-600 hover:underline">milanghimireinfo@gmail.com</a></li>
             <li>Website: <Link href="/" className="text-blue-600 hover:underline">milanghimire.info.np</Link></li>
           </ul>
         </section>
