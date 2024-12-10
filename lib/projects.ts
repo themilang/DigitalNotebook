@@ -13,7 +13,7 @@ export type Project = {
 export type ProjectMetadata = {
   title?: string
   summary?: string
-  image?: Url
+  image?: string
   author?: string
   authorPhoto?:string
   publishedAt?: string
