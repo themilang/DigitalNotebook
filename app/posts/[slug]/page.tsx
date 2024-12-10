@@ -4,9 +4,10 @@ import Image from 'next/image'
 import { formatDate } from '@/lib/utils'
 import MDXContent from '@/components/mdx-content'
 import { getPosts, getPostBySlug } from '@/lib/posts'
-import { ArrowLeftIcon, ClockIcon, EyeOpenIcon } from '@radix-ui/react-icons' // Import icons
+import { ArrowLeftIcon, ClockIcon, EyeOpenIcon } from '@radix-ui/react-icons'
 import { notFound } from 'next/navigation'
 import NewsletterForm from '@/components/newsletter-form'
+import SourceCodeForm from '@/components/SourceCodeForm' // Import the form
 
 export async function generateStaticParams() {
   const posts = await getPosts()
@@ -36,7 +37,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
   }
 
   const { metadata, content } = post
-  const { title, image, author, authorPhoto, publishedAt } = metadata
+  const { title, image, author, authorPhoto, publishedAt,youtubeLink ,summary} = metadata
 
   const readTime = calculateReadTime(content) // Calculate read time
   const views = await fetchViews(slug) // Fetch dynamic views
@@ -103,7 +104,28 @@ export default async function Post({ params }: { params: { slug: string } }) {
               </div>
             </div>
           </div>
+          <h1 className='text-sm mt-16 '>{summary}</h1>
+
+  {/* Add the Source Code Form */}
+  <div className="mt-2">
+            <SourceCodeForm />
+          </div>
+        
         </header>
+        {youtubeLink && (
+          <div className="mt-8">
+            <h3 className="text-lg font-semibold">Watch on YouTube</h3>
+            <Link
+              href={youtubeLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 hover:text-blue-700"
+            >
+              Realtime messaging app | NextJS, Clerk & Stream - @hamedbahram
+            </Link>
+          </div>
+        )}
+
 
         {/* Content */}
         <main className='prose mt-16 dark:prose-invert'>

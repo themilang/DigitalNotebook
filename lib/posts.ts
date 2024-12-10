@@ -18,6 +18,7 @@ export type PostMetadata = {
   authorPhoto?:string
   publishedAt?: string
   slug: string
+  youtubeLink?:string
 }
 
 export async function getPostBySlug(slug: string): Promise<Post | null> {
