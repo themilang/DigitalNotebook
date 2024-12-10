@@ -95,7 +95,7 @@ const PricingPlan = () => {
         {/* Pricing Cards */}
         <div
           className={`grid gap-8 ${
-            isOnetime ? 'grid-cols-3 justify-items-center' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
+            isOnetime ? 'md:grid-cols-3  justify-items-center' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
           }`}
         >
           {!isOnetime
@@ -148,7 +148,7 @@ const PricingPlan = () => {
                   .map(plan => (
                     <div
                       key={plan.name}
-                      className="bg-slate-800 w-full max-w-[650px] mx-auto overflow-hidden rounded-lg bg-card shadow-lg transition-transform duration-300 hover:scale-105"
+                      className="bg-slate-800 w-full max-w-[950px] mx-auto overflow-hidden rounded-lg bg-card shadow-lg transition-transform duration-300 hover:scale-105"
                     >
                       <div className="flex min-h-full flex-col px-6 py-8">
                         {/* Plan Name */}
