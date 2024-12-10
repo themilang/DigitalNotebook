@@ -1,0 +1,121 @@
+---
+title: Building a Linear Regression Model with NumPy
+summary: Learn how to implement a linear regression model from scratch using NumPy, one of the most popular libraries for numerical computing in Python.
+author: 'Milan Ghimire'
+authorPhoto: "/images/authors/milan.png"
+publishedAt: '2024-12-10'
+---
+## Overview
+
+Linear regression is one of the simplest and most widely used predictive modeling techniques. In this post, we’ll learn how to build a linear regression model from scratch using NumPy, without relying on any machine learning libraries.
+
+## What is Linear Regression?
+
+Linear regression is a statistical method used to model the relationship between an independent variable (predictor) and a dependent variable (target) using a straight line. The line is represented as:
+
+**y = mx + b**
+
+Where:
+- `m` is the slope of the line.
+- `b` is the y-intercept.
+- `x` is the independent variable, and `y` is the dependent variable.
+
+The goal is to minimize the difference between the predicted and actual values by finding the best `m` and `b`.
+
+```py
+import numpy as np
+
+# Generate synthetic data
+np.random.seed(42)
+X = 2 * np.random.rand(100, 1)
+y = 4 + 3 * X + np.random.randn(100, 1)
+
+# Visualize the data
+import matplotlib.pyplot as plt
+plt.scatter(X, y)
+plt.xlabel("X")
+plt.ylabel("y")
+plt.title("Synthetic Data for Linear Regression")
+plt.show()
+```
+## Why Use Linear Regression?
+
+Linear regression is a fundamental algorithm for predictive analytics with various applications:
+	•	Healthcare: Estimating patient recovery times.
+	•	Finance: Forecasting market trends.
+	•	Engineering: Modeling performance metrics.
+	•	Sales: Predicting revenue based on historical data.
+
+By understanding this basic model, you can better appreciate its applications and build upon it with more complex algorithms.
+
+Implementing Linear Regression in NumPy
+
+Here’s how you can implement linear regression from scratch using NumPy:
+
+### Step 1: Define the Cost Function
+
+The cost function calculates the error between predicted and actual values. For linear regression, we use the Mean Squared Error (MSE):
+
+MSE = (1/n) Σ (y_actual - y_predicted)²
+```
+# Define the cost function
+def compute_cost(X, y, theta):
+    m = len(y)
+    predictions = X.dot(theta)
+    cost = (1 / (2 * m)) * np.sum((predictions - y) ** 2)
+    return cost
+    ```
+    ### Step 2: Implement Gradient Descent
+
+Gradient Descent is an optimization algorithm to minimize the cost function by iteratively updating theta:
+
+θ = θ - (α/m) Σ (y_actual - y_predicted) * x
+```
+# Implement gradient descent
+def gradient_descent(X, y, theta, alpha, num_iters):
+    m = len(y)
+    cost_history = []
+
+    for i in range(num_iters):
+        predictions = X.dot(theta)
+        errors = predictions - y
+        theta -= (alpha / m) * (X.T.dot(errors))
+        cost = compute_cost(X, y, theta)
+        cost_history.append(cost)
+
+    return theta, cost_history
+    ```
+    ### Step 3: Train the Model
+
+Using synthetic data, train the linear regression model.
+```# Predict using the model
+X_new = np.array([[0], [2]])  # New data points
+X_new_b = np.c_[np.ones((len(X_new), 1)), X_new]
+y_predict = X_new_b.dot(theta)
+
+# Plot predictions
+plt.scatter(X, y, label="Data")
+plt.plot(X_new, y_predict, color="red", label="Prediction")
+plt.xlabel("X")
+plt.ylabel("y")
+plt.legend()
+plt.title("Linear Regression Prediction")
+plt.show()
+```
+## Why Build Linear Regression from Scratch?
+
+Building linear regression from scratch helps you:
+	•	Understand the mathematical foundations of machine learning.
+	•	Develop a better intuition for optimization algorithms like gradient descent.
+	•	Gain hands-on experience with numerical computing using NumPy.
+
+## Advantages of Linear Regression
+	1.	Simplicity: Easy to understand and implement.
+	2.	Efficiency: Computationally inexpensive.
+	3.	Interpretability: Provides clear insights into relationships between variables.
+
+## Conclusion
+
+Linear regression is a cornerstone of machine learning and statistics. By building it from scratch in NumPy, you can deepen your understanding of how predictive models work and prepare for more advanced techniques.
+
+What will you predict next? Start experimenting with your own data and unlock the power of linear regression!
