@@ -1,10 +1,10 @@
+import Link from 'next/link'
 import { JSX, SVGProps } from 'react'
 
 const navigation = [
-
   {
     name: 'LinkedIn',
-    href: '#',
+    href: 'https://www.linkedin.com/in/milan-ghimire-090b72273',
     icon: (props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) => (
       <svg fill='currentColor' viewBox='0 0 448 512' {...props}>
         <path
@@ -14,18 +14,10 @@ const navigation = [
       </svg>
     )
   },
-  {
-    name: 'X',
-    href: '#',
-    icon: (props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) => (
-      <svg fill='currentColor' viewBox='0 0 24 24' {...props}>
-        <path d='M13.6823 10.6218L20.2391 3H18.6854L12.9921 9.61788L8.44486 3H3.2002L10.0765 13.0074L3.2002 21H4.75404L10.7663 14.0113L15.5685 21H20.8131L13.6819 10.6218H13.6823ZM11.5541 13.0956L10.8574 12.0991L5.31391 4.16971H7.70053L12.1742 10.5689L12.8709 11.5655L18.6861 19.8835H16.2995L11.5541 13.096V13.0956Z' />
-      </svg>
-    )
-  },
+  
   {
     name: 'GitHub',
-    href: '#',
+    href: 'https://github.com/themilang',
     icon: (props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) => (
       <svg fill='currentColor' viewBox='0 0 24 24' {...props}>
         <path
@@ -38,7 +30,7 @@ const navigation = [
   },
   {
     name: 'YouTube',
-    href: '#',
+    href: 'https://www.youtube.com/@we-are-engineers',
     icon: (props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) => (
       <svg fill='currentColor' viewBox='0 0 24 24' {...props}>
         <path
@@ -70,8 +62,50 @@ export default function Footer() {
               </a>
             ))}
           </div>
-          <div className='mt-8 md:order-1 md:mt-0'>
-            <p className='text-center text-xs leading-5 text-muted-foreground'>
+          <div className='mt-8 text-sm md:order-1 md:mt-0'>
+            <ul className='flex flex-row gap-4'>
+              <li>
+                <Link
+                  href='/disclaimer'
+                  className='text-sky-600 hover:underline'
+                >
+                  {' '}
+                  Disclaimer
+                </Link>
+              </li>
+              <li>
+                {' '}
+                <Link
+                  href='/privacy-policy'
+                  className='text-sky-600 hover:underline'
+                >
+                  {' '}
+                  Privacy & Policy
+                </Link>
+              </li>
+              <li>
+                {' '}
+                <Link
+                  href='/terms-and-conditions'
+                  className='text-sky-600 hover:underline'
+                >
+                  {' '}
+                  Terms & Conditions
+                </Link>
+              </li>
+              <li>
+                {' '}
+                <Link
+                  href='/aboutme'
+                  className='text-sky-600 hover:underline'
+                >
+                  {' '}
+                  About Us
+                </Link>
+              </li>
+            </ul>
+            <br />
+            <p className='text-center flex flex-col items-center justify-center text-xs leading-5 text-muted-foreground'>
               &copy; {new Date().getFullYear()} Milan Ghimire. All rights
               reserved.
             </p>

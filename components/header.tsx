@@ -60,6 +60,7 @@ export default function Header() {
           <li className='transition-colors hover:text-foreground'>
             <Link href='/contact' onClick={closeMenu}>Contact</Link>
           </li>
+          
         </ul>
 
         {/* Theme Toggle */}
