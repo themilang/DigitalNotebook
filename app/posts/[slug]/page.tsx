@@ -7,25 +7,14 @@ import { getPosts, getPostBySlug } from '@/lib/posts'
 import { ArrowLeftIcon, ClockIcon, EyeOpenIcon } from '@radix-ui/react-icons'
 import { notFound } from 'next/navigation'
 import NewsletterForm from '@/components/newsletter-form'
-import SourceCodeForm from '@/components/SourceCodeForm' // Import the form
+import SourceCodeForm from '@/components/SourceCodeForm'
+import MockAd from '@/components/MockAd' // Import MockAd component
 
 export async function generateStaticParams() {
   const posts = await getPosts()
   const slugs = posts.map(post => ({ slug: post.slug }))
 
   return slugs
-}
-
-// Utility to calculate read time
-const calculateReadTime = (content: string) => {
-  const words = content.split(/\s+/).length
-  const wordsPerMinute = 200 // Average reading speed
-  return `${Math.ceil(words / wordsPerMinute)} min read`
-}
-
-// Simulate fetching dynamic views (replace with actual API call if available)
-const fetchViews = async (slug: string): Promise<number> => {
-  return Math.floor(Math.random() * 1000) + 1 // Simulated random views
 }
 
 export default async function Post({ params }: { params: { slug: string } }) {
@@ -37,10 +26,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
   }
 
   const { metadata, content } = post
-  const { title, image, author, authorPhoto, publishedAt,youtubeLink ,summary} = metadata
-
-  const readTime = calculateReadTime(content) // Calculate read time
-  const views = await fetchViews(slug) // Fetch dynamic views
+  const { title, image, author, authorPhoto, publishedAt, youtubeLink, summary } = metadata
 
   return (
     <section className='pb-24 pt-32'>
@@ -53,6 +39,9 @@ export default async function Post({ params }: { params: { slug: string } }) {
           <ArrowLeftIcon className='h-5 w-5' />
           <span>Back to posts</span>
         </Link>
+
+        
+        
 
         {/* Main image */}
         {image && (
@@ -73,7 +62,6 @@ export default async function Post({ params }: { params: { slug: string } }) {
 
           {/* Metadata */}
           <div className='mt-2 flex justify-between items-center text-sm text-muted-foreground'>
-            {/* Author Info */}
             <div className='flex items-center'>
               {authorPhoto && (
                 <Image
@@ -88,49 +76,25 @@ export default async function Post({ params }: { params: { slug: string } }) {
                 {author} / {formatDate(publishedAt ?? '')}
               </span>
             </div>
-
-            {/* Read Time and Views */}
-            <div className='flex items-center gap-4 text-right'>
-              {/* Read Time */}
-              <div className='flex items-center gap-1'>
-                <ClockIcon className='w-4 h-4' />
-                <span>{readTime}</span>
-              </div>
-
-              {/* Views */}
-              <div className='flex items-center gap-1'>
-                <EyeOpenIcon className='w-4 h-4' />
-                <span>{views.toLocaleString()} views</span>
-              </div>
-            </div>
           </div>
-          <h1 className='text-sm mt-16 '>{summary}</h1>
+          
+          <h1 className='text-sm mt-16'>{summary}</h1>
 
-  {/* Add the Source Code Form */}
-  <div className="mt-2">
+          {/* Add the Source Code Form */}
+          <div className="mt-2">
             <SourceCodeForm />
           </div>
-        
         </header>
-        {youtubeLink && (
-          <div className="mt-8">
-            <h3 className="text-lg font-semibold">Watch on YouTube</h3>
-            <Link
-              href={youtubeLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-600 hover:text-blue-700"
-            >
-              Realtime messaging app | NextJS, Clerk & Stream - @hamedbahram
-            </Link>
-          </div>
-        )}
 
+        <MockAd />
 
         {/* Content */}
         <main className='prose mt-16 dark:prose-invert'>
           <MDXContent source={content} />
         </main>
+
+        {/* Ad: Above Footer */}
+        <MockAd />
 
         {/* Footer */}
         <footer className='mt-16'>
