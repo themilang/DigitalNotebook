@@ -10,12 +10,16 @@ export default function Header() {
     setIsMenuOpen(!isMenuOpen)
   }
 
+  const closeMenu = () => {
+    setIsMenuOpen(false)
+  }
+
   return (
     <header className='fixed inset-x-0 top-0 z-50 bg-background/75 py-4 backdrop-blur-sm'>
       <nav className='container flex max-w-3xl items-center justify-between'>
         {/* Logo */}
         <div>
-          <Link href='/' className='font-mono text-3xl font-extrabold'>
+          <Link href='/' className='font-mono text-3xl font-extrabold' onClick={closeMenu}>
             MG
           </Link>
         </div>
@@ -38,23 +42,23 @@ export default function Header() {
         {/* Navigation Links */}
         <ul
           className={`absolute sm:static top-16 left-0 w-full sm:w-auto bg-background sm:bg-transparent sm:flex flex-col sm:flex-row items-center sm:gap-10 text-sm font-light text-muted-foreground transition-all duration-300 ${
-            isMenuOpen ? 'block text-right -ml-12 p-6  bg-blur-lg -mt-3 ' : 'hidden sm:block'
+            isMenuOpen ? 'block text-right space-y-8 p-12 bg-blur-lg -mt-3 hover:text-blue-300 text-xl h-screen py-32' : 'hidden sm:block'
           }`}
         >
           <li className='transition-colors hover:text-foreground'>
-            <Link href='/posts'>Posts</Link>
+            <Link href='/posts' onClick={closeMenu}>Posts</Link>
           </li>
           <li className='transition-colors hover:text-foreground'>
-            <Link href='/projects'>Projects</Link>
+            <Link href='/projects' onClick={closeMenu}>Projects</Link>
           </li>
           <li className='transition-colors hover:text-foreground'>
-            <Link href='/courses'>Courses</Link>
+            <Link href='/courses' onClick={closeMenu}>Courses</Link>
           </li>
           <li className='transition-colors hover:text-foreground'>
-            <Link href='/workwithme'>Work With Me</Link>
+            <Link href='/workwithme' onClick={closeMenu}>Work With Me</Link>
           </li>
           <li className='transition-colors hover:text-foreground'>
-            <Link href='/contact'>Contact</Link>
+            <Link href='/contact' onClick={closeMenu}>Contact</Link>
           </li>
         </ul>
 
