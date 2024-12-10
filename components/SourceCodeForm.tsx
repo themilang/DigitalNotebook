@@ -28,7 +28,7 @@ export default function SourceCodeForm() {
       <p className='text-gray-600'>Enter your Github username and email to access the source code. <br />
 
 </p>
-      <form onSubmit={handleSubmit} className="flex flex-row mt-3 gap-2">
+      <form onSubmit={handleSubmit} className="flex  mt-3 gap-2 md:flex-row flex-col">
         <div className='  '>
           
           <input
@@ -52,7 +52,7 @@ export default function SourceCodeForm() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            className="mt-1 py-2 px-3   rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+            className="mt-1 py-2 px-2   rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
           />
         </div>
         <button
