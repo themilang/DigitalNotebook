@@ -7,6 +7,7 @@ import MDXContent from '@/components/mdx-content'
 import { ArrowLeftIcon } from '@radix-ui/react-icons'
 import { getProjectBySlug, getProjects } from '@/lib/projects'
 import { notFound } from 'next/navigation'
+import SourceCodeForm from '@/components/SourceCodeForm'
 
 
 
@@ -56,19 +57,12 @@ export default async function Project({
           <ArrowLeftIcon className='h-5 w-5' />
           <span>Back to projects</span>
         </Link>
+        <h1 className='text-3xl font-bold font-mono mb-6'>{title}</h1>
 
-        {image && (
-          <div className='relative mb-6 h-96 w-full overflow-hidden rounded-lg'>
-            <Image
-              src={image}
-              alt={title || ''}
-              className='object-cover'
-              fill
-            />
-          </div>
-        )}
+        
 
         <header>
+
         <div className='flex items-center'>
               {authorPhoto && (
                 <Image
@@ -106,10 +100,14 @@ export default async function Project({
 
            
         </header>
-
+        <div className="mt-2">
+            <SourceCodeForm />
+          </div>
+        
         <main className='prose mt-16 dark:prose-invert'>
           <MDXContent source={content} />
         </main>
+       
       </div>
     </section>
   )
