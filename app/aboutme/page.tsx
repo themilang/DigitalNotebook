@@ -1,30 +1,82 @@
-import Link from 'next/link'
-import { ArrowLeftIcon } from '@radix-ui/react-icons'
+import Head from 'next/head';
+import Link from 'next/link';
+import { ArrowLeftIcon } from '@radix-ui/react-icons';
 
 export default function AboutUs() {
+  const googleAdClient = process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_CLIENT_ID;
+
   return (
-    <section className="pb-24 pt-32">
-      <div className="container max-w-3xl">
-        {/* Back link */}
-        <Link
-          href="/"
-          className="mb-8 inline-flex items-center gap-2 text-sm font-light text-muted-foreground transition-colors hover:text-foreground"
-        >
-          <ArrowLeftIcon className="h-5 w-5" />
-          <span>Back to Home</span>
-        </Link>
+    <>
+      {/* Head Tag for SEO */}
+      <Head>
+        <title>About Us - Milan Ghimire</title>
+        <meta
+          name="description"
+          content="Learn more about Milan Ghimire and the mission behind milanghimire.info.np. Discover the vision, portfolio, and blog offerings that inspire and empower individuals."
+        />
+        <meta
+          name="keywords"
+          content="About Milan Ghimire, About milanghimire.info.np, Software Developer, ML/AI Enthusiast, Visionary, Portfolio, Blog"
+        />
+        <meta name="author" content="Milan Ghimire" />
+        <link rel="canonical" href="https://milanghimire.info.np/about" />
 
-        {/* About Us Content */}
-        <h1 className="text-4xl font-bold mb-6">About Us</h1>
+        {/* Google AdSense Script */}
+        {googleAdClient && (
+          <script
+            async
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${googleAdClient}`}
+            crossOrigin="anonymous"
+          ></script>
+        )}
 
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-3">Welcome to milanghimire.info.np</h2>
-          <p className="text-gray-600">
-            At <strong>milanghimire.info.np</strong>, we are passionate about sharing knowledge, showcasing creativity, and making meaningful connections through our content. This platform serves as a window into my journey as a professional and a creative individual. Whether you&apos;re here to explore my portfolio or dive into thought-provoking blogs, there&apos;s something for everyone.
-          </p>
-        </section>
+        {/* OpenGraph Tags */}
+        <meta property="og:title" content="About Us - Milan Ghimire" />
+        <meta
+          property="og:description"
+          content="Learn more about Milan Ghimire and the mission behind milanghimire.info.np. Discover the vision, portfolio, and blog offerings that inspire and empower individuals."
+        />
+        <meta property="og:url" content="https://milanghimire.info.np/about" />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:image"
+          content="https://media.licdn.com/dms/image/v2/D4E03AQEyGBjw8XIZiw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1683436186866?e=1739404800&v=beta&t=vHTQD-tbOzMlioE5o3CAYfNrY1ZHAXHuSvOLyPbTAmw"
+        />
 
-        <section className="mb-8">
+        {/* Twitter Card Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About Us - Milan Ghimire" />
+        <meta
+          name="twitter:description"
+          content="Learn more about Milan Ghimire and the mission behind milanghimire.info.np."
+        />
+        <meta
+          name="twitter:image"
+          content="https://media.licdn.com/dms/image/v2/D4E03AQEyGBjw8XIZiw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1683436186866?e=1739404800&v=beta&t=vHTQD-tbOzMlioE5o3CAYfNrY1ZHAXHuSvOLyPbTAmw"
+        />
+      </Head>
+
+      <section className="pb-24 pt-32">
+        <div className="container max-w-3xl">
+          {/* Back link */}
+          <Link
+            href="/"
+            className="mb-8 inline-flex items-center gap-2 text-sm font-light text-muted-foreground transition-colors hover:text-foreground"
+          >
+            <ArrowLeftIcon className="h-5 w-5" />
+            <span>Back to Home</span>
+          </Link>
+
+          {/* About Us Content */}
+          <h1 className="text-4xl font-bold mb-6">About Us</h1>
+
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold mb-3">Welcome to milanghimire.info.np</h2>
+            <p className="text-gray-600">
+              At <strong>milanghimire.info.np</strong>, we are passionate about sharing knowledge, showcasing creativity, and making meaningful connections through our content. This platform serves as a window into my journey as a professional and a creative individual. Whether you&apos;re here to explore my portfolio or dive into thought-provoking blogs, there&apos;s something for everyone.
+            </p>
+          </section>
+          <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-3">Our Mission</h2>
           <p className="text-gray-600">
             Our mission is to inspire, educate, and empower individuals by sharing insights, projects, and stories. Through this website, I aim to:
@@ -87,11 +139,12 @@ export default function AboutUs() {
             </li>
           </ul>
         </section>
-
-        <footer className="mt-8 border-t pt-4 text-gray-500 text-sm">
-          <p>&copy; 2024 <Link href="/" className="text-blue-600 hover:underline">milanghimire.info.np</Link>. All rights reserved.</p>
-        </footer>
-      </div>
-    </section>
-  )
+          <footer className="mt-8 border-t pt-4 text-gray-500 text-sm">
+            <p>&copy; 2024 <Link href="/" className="text-blue-600 hover:underline">milanghimire.info.np</Link>. All rights reserved.</p>
+          </footer>
+        </div>
+        
+      </section>
+    </>
+  );
 }
