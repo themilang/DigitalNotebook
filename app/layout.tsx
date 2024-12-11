@@ -1,19 +1,18 @@
-import type { Metadata } from 'next'
-import { Inter, Playfair_Display } from 'next/font/google'
+import type { Metadata } from 'next';
+import { Inter, Playfair_Display } from 'next/font/google';
 
-import { cn } from '@/lib/utils'
+import { cn } from '@/lib/utils';
 
-import './globals.css'
-import Providers from '@/components/providers'
-import Header from '@/components/header'
-import Footer from '@/components/footer'
-import Testimonials from '@/components/testimonials'
+import './globals.css';
+import Providers from '@/components/providers';
+import Header from '@/components/header';
+import Footer from '@/components/footer';
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
+const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 const playfair = Playfair_Display({
   subsets: ['latin'],
-  variable: '--font-serif'
-})
+  variable: '--font-serif',
+});
 
 export const metadata: Metadata = {
   title: 'Milan Ghimire - Software Developer, ML/AI Enthusiast, and Tech Visionary',
@@ -25,7 +24,7 @@ export const metadata: Metadata = {
     title: 'Milan Ghimire - Software Developer, ML/AI Enthusiast, and Tech Visionary',
     description:
       'Discover Milan Ghimire\'s expertise as a full-stack web developer and ML/AI enthusiast specializing in MERN technologies and building innovative solutions.',
-    url: 'https://milanghimire.com',
+    url: 'https://milanghimire.info.np',
     images: [
       {
         url: 'https://media.licdn.com/dms/image/v2/D4E03AQEyGBjw8XIZiw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1683436186866?e=1739404800&v=beta&t=vHTQD-tbOzMlioE5o3CAYfNrY1ZHAXHuSvOLyPbTAmw',
@@ -37,34 +36,41 @@ export const metadata: Metadata = {
     type: 'website',
   },
   alternates: {
-    canonical: 'https://milanghimire.info.np', 
+    canonical: 'https://milanghimire.info.np',
+    languages: {
+      'en-US': 'https://milanghimire.info.np/posts',
+    },
   },
   other: {
     'linkedin:profile': 'https://www.linkedin.com/in/milan-ghimire-090b72273/',
   },
 };
+
 export default function RootLayout({
-  children
+  children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
-    <html lang='en' suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* Add metadata for /posts */}
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://milanghimire.info.np/posts" />
+      </head>
       <body
         className={cn(
-          'flex min-h-screen flex-col font-sans antialiased   ',
+          'flex min-h-screen flex-col font-sans antialiased',
           inter.variable,
           playfair.variable
         )}
       >
         <Providers>
           <Header />
-          <main className='grow ' >{children}</main>
-        
+          <main className="grow">{children}</main>
           <Footer />
-      
         </Providers>
       </body>
     </html>
-  )
+  );
 }
