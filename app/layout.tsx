@@ -37,8 +37,9 @@ export default function RootLayout({
         <Providers>
           <Header />
           <main className='grow ' >{children}</main>
-          <Testimonials/>
+        
           <Footer />
+          <Testimonials/>
         </Providers>
       </body>
     </html>
