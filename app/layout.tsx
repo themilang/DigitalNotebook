@@ -38,7 +38,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         {/* Google AdSense Script */}
-        
+        <meta name="google-site-verification" content="59LqVUnp07UYOy3uNr-unyFZnhgb48zqRjvAN_7XSkE" />
       </head>
       <body
         className={cn(
