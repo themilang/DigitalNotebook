@@ -12,7 +12,6 @@ const playfair = Playfair_Display({
   subsets: ['latin'],
   variable: '--font-serif',
 });
-const pubid = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID;
 
 export const metadata: Metadata = {
   title: 'Milan Ghimire - Software Developer, ML/AI Enthusiast, and Tech Visionary',
@@ -39,16 +38,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         {/* Google AdSense Script */}
-        <script
-          async
-          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${pubid}`}
-          crossOrigin="anonymous"
-        ></script>
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-000000000"
-          crossOrigin="anonymous"
-        ></script>
+        
       </head>
       <body
         className={cn(

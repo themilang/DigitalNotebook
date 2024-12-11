@@ -1,24 +1,27 @@
-# General rules
+# General rules for all user agents
 User-agent: *
-Allow: /
+Disallow: /search
+Allow: /ads/preferences/
+Allow: /dtt/k
+Allow: /pagead/show_ads.js
+Allow: /pagead/managed/
+Allow: /pagead/html/
+Allow: /pagead/js/
+Allow: /tag/js/
 
-# Allow Google Ads-related resources
+# Allow AdsBot crawlers (Google Ads-specific resources)
 User-agent: AdsBot-Google
 Allow: /
 
-# Allow all paths for AdsBot crawlers
 User-agent: AdsBot-Google-Mobile
 Allow: /
 
-# Ensure all AdSense resources are crawlable
 User-agent: Mediapartners-Google
 Allow: /
 
-# Disallow irrelevant paths
-Disallow: /search
+# Block irrelevant paths (optional)
+Disallow: /private/
+Disallow: /temporary/
 
-# Host Directive
-Host: https://www.milanghimire.info.np
-
-# Sitemap Location
+# Sitemap
 Sitemap: https://www.milanghimire.info.np/sitemap.xml
