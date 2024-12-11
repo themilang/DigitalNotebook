@@ -60,46 +60,56 @@ export default async function Project({
         <h1 className='text-3xl font-bold font-mono mb-6'>{title}</h1>
 
         
-
         <header>
+  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center text-sm text-muted-foreground">
+    {/* Avatar and Author Name */}
+    <div className="flex items-center gap-3">
+      {authorPhoto && (
+        <Image
+          src={authorPhoto}
+          alt={author || ''}
+          width={34}
+          height={34}
+          className="rounded-full"
+        />
+      )}
+      <div>
+        <span>
+          {author} / {formatDate(publishedAt ?? '')}
+        </span>
+        {/* Read Time and Views */}
+        <div className="flex items-center gap-4 mt-2 sm:mt-0 sm:hidden">
+          {/* Read Time */}
+          <div className="flex items-center gap-1">
+            <ClockIcon className="w-4 h-4" />
+            <span>{readTime}</span>
+          </div>
 
-        <div className='flex items-center'>
-              {authorPhoto && (
-                <Image
-                  src={authorPhoto}
-                  alt={author || ''}
-                  width={34}
-                  height={34}
-                  className='rounded-full mr-3'
-                />
-              )}
-              <div className='mt-2  gap-32 flex justify-between items-center text-sm text-muted-foreground'>
-              <div >
-              <span>
-                {author} / {formatDate(publishedAt ?? '')}
-              </span>
-                </div>
-                
-               {/* Read Time and Views */}
-            <div className='flex items-center gap-4 text-right'>
-              {/* Read Time */}
-              <div className='flex items-center gap-1'>
-                <ClockIcon className='w-4 h-4' />
-                <span>{readTime}</span>
-              </div>
+          {/* Views */}
+          <div className="flex items-center gap-1">
+            <EyeOpenIcon className="w-4 h-4" />
+            <span>{views.toLocaleString()} views</span>
+          </div>
+        </div>
+      </div>
+    </div>
 
-              {/* Views */}
-              <div className='flex items-center gap-1'>
-                <EyeOpenIcon className='w-4 h-4' />
-                <span>{views.toLocaleString()} views</span>
-              </div>
-            </div>
-              </div>
-              
-            </div>
+    {/* Time and Views for Larger Screens */}
+    <div className="hidden sm:flex items-center gap-4">
+      {/* Read Time */}
+      <div className="flex items-center gap-1">
+        <ClockIcon className="w-4 h-4" />
+        <span>{readTime}</span>
+      </div>
 
-           
-        </header>
+      {/* Views */}
+      <div className="flex items-center gap-1">
+        <EyeOpenIcon className="w-4 h-4" />
+        <span>{views.toLocaleString()} views</span>
+      </div>
+    </div>
+  </div>
+</header>
         <div className="mt-2">
             <SourceCodeForm />
           </div>
