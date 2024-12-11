@@ -9,7 +9,7 @@ export default function Intro() {
           Hey, I&#39;m Milan <span className='font-mono text-sm text-sky-600'>/muh·lan/</span>
         </h1>
         <p className='mt-2 text-sm font-light text-muted-foreground leading-relaxed'>
-          Welcome to my digital notebook. I’m a Computer Engineer and Fullstack Developer from Nepal. Here, I share my latest projects, insights into ML & AI, and lessons learned throughout my journey. Actively sharing knowledge with the community.
+          Welcome to my digital notebook. I’m a Computer Engineer and Fullstack Developer from Nepal. Here, I share my latest projects, insights into ML & AI, and lessons learned throughout my journey. Actively <span><a href="https://www.milanghimire.info.np/posts">sharing</a></span> knowledge with the community.
         </p>
       </div>
       <div className='relative flex-shrink-0'>
