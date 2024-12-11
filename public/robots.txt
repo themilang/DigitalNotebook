@@ -1,14 +1,20 @@
-# General Rules
+# General rules
 User-agent: *
 Allow: /
 
-# Specific Rules for Posts
-Allow: /posts
-Allow: /posts/*
-
-# Allow Google Ads scripts and related resources
+# Allow Google Ads-related resources
 User-agent: AdsBot-Google
 Allow: /
+
+# Allow all paths for AdsBot crawlers
+User-agent: AdsBot-Google-Mobile
+Allow: /
+
+# Ensure all AdSense resources are crawlable
+User-agent: Mediapartners-Google
+Allow: /
+
+# Disallow irrelevant paths
 Disallow: /search
 
 # Host Directive
