@@ -8,6 +8,7 @@ import { ArrowLeftIcon } from '@radix-ui/react-icons'
 import { getProjectBySlug, getProjects } from '@/lib/projects'
 import { notFound } from 'next/navigation'
 import SourceCodeForm from '@/components/SourceCodeForm'
+import MockAd from '@/components/MockAd'
 
 
 
@@ -59,7 +60,7 @@ export default async function Project({
         </Link>
         <h1 className='text-3xl font-bold font-mono mb-6'>{title}</h1>
 
-        
+        <MockAd/>
         <header>
   <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center text-sm text-muted-foreground">
     {/* Avatar and Author Name */}
@@ -117,7 +118,7 @@ export default async function Project({
         <main className='prose mt-16 dark:prose-invert'>
           <MDXContent source={content} />
         </main>
-       
+        <MockAd/>
       </div>
     </section>
   )

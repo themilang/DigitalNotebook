@@ -2,7 +2,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import { ProjectMetadata } from '@/lib/projects'
-import { formatDate } from '@/lib/utils'
 
 export default function Projects({
   projects
@@ -10,33 +9,38 @@ export default function Projects({
   projects: ProjectMetadata[]
 }) {
   return (
-    <ul className='grid grid-cols-1 gap-8 sm:grid-cols-2'>
-      {projects.map(project => (
-        <li key={project.slug} className='group relative'>
-          <Link href={`/projects/${project.slug}`}>
-            {project.image && (
-              <div className='h-72 w-full overflow-hidden bg-muted sm:h-60'>
+    <ul className="grid grid-cols-1 gap-8 sm:grid-cols-1 lg:grid-cols-1 xl:grid-cols-2">
+      {projects.map((project) => (
+        <li
+          key={project.slug}
+          className="relative overflow-hidden rounded-lg border shadow-lg hover:shadow-2xl transition-shadow duration-300"
+        >
+          <Link href={`/projects/${project.slug}`} className="block group">
+            {/* Image Section */}
+            <div className="relative h-56 w-full">
+              {project.image && (
                 <Image
                   src={project.image}
                   alt={project.title || ''}
                   fill
-                  className='rounded-lg object-cover object-center transition-transform duration-500 group-hover:scale-105'
+                  className="object-cover transition-transform duration-500 group-hover:scale-105 group-hover:blur-sm"
                 />
+              )}
+              {/* Title and Description Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/40 to-transparent p-4 flex flex-col justify-end">
+                <h2 className="text-lg font-semibold text-white">
+                  {project.title}
+                </h2>
+                <p className="mt-1 text-sm text-white line-clamp-2">
+                  {project.summary}
+                </p>
               </div>
-            )}
-
-            <div className='absolute inset-[1px] rounded-lg bg-background/70 opacity-0 transition-opacity duration-500 group-hover:opacity-100' />
-
-            <div className='absolute inset-x-0 bottom-0 translate-y-2 px-6 py-5 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100'>
-              <h2 className='title line-clamp-1 text-xl no-underline'>
-                {project.title}
-              </h2>
-              <p className='line-clamp-1 text-sm text-muted-foreground'>
-                {project.summary}
-              </p>
-              <p className='text-xs font-light text-muted-foreground'>
-                {formatDate(project.publishedAt ?? '')}
-              </p>
+              {/* Hover Effect Button */}
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/40">
+                <button className="px-4 py-2 bg-white text-black rounded-md shadow hover:bg-gray-200 transition">
+                  View Project
+                </button>
+              </div>
             </div>
           </Link>
         </li>

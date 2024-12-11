@@ -1,0 +1,57 @@
+---
+title: Web Socket Real Time Chat Application
+summary: A real-time chat application built using WebSockets and the Socket.IO library, providing low-latency, bi-directional communication.
+image: https://hosting-images.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fchat.26a20346.png&w=2048&q=75
+author: 'Milan Ghimire'
+authorPhoto: "/images/authors/milan.png"
+publishedAt: '2024-12-11'
+---
+
+This is a real-time chat application built with WebSockets and the Socket.IO library. It leverages a single TCP connection to establish bi-directional, low-latency communication between the server and clients. With **Node.js** on the server-side and **React** on the client-side, the application ensures high-frequency and efficient messaging capabilities.
+
+## Features
+
+- **Real-Time Messaging**: Instant communication with no delays.
+- **Bi-Directional Communication**: Both clients and the server can send and receive messages simultaneously.
+- **User Authentication**: Secure user login and session handling.
+- **Typing Indicators**: Real-time feedback for users while typing.
+- **Room Support**: Join specific chat rooms for group or private discussions.
+- **Scalability**: Efficient handling of multiple simultaneous connections.
+- **Persistent Chat History**: Save and load chat history for ongoing conversations.
+
+## Technologies
+
+- **WebSockets**: Core technology for real-time, bi-directional communication.
+- **Socket.IO**: Library for simplifying WebSocket communication and handling events.
+- **Node.js**: Backend for handling server-side logic and WebSocket connections.
+- **Express.js**: Framework for building APIs and routing.
+- **React.js**: Frontend library for dynamic and responsive UI.
+- **MongoDB**: Database for storing user data and chat history.
+- **Tailwind CSS**: For styling a clean and responsive user interface.
+
+## Getting Started
+
+To get started with this project, clone the repository and install dependencies:
+
+```bash
+git clone
+cd real-time-chat-app
+npm install
+```
+Run the server:
+```
+npm run server
+```
+Start the frontend:
+```
+npm run client
+```
+Access the application at http://localhost:3000.
+
+## Deployment
+
+You can deploy this application using platforms like Heroku or AWS for the backend and Vercel or Netlify for the frontend. Make sure to configure WebSocket support on your hosting service.
+
+## Conclusion
+
+The Web Socket Real Time Chat Application demonstrates how WebSockets and Socket.IO can be utilized to build efficient, real-time communication systems. With its robust features and low-latency performance, it’s an excellent foundation for chat applications, multiplayer games, or other real-time platforms.
