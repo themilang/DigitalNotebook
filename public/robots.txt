@@ -1,7 +1,8 @@
-# *
-User-agent:*
+# General Rules
+User-agent: *
 Allow: /
 
+# Specific Rules for Posts
 Allow: /posts
 Allow: /posts/*
 
@@ -10,9 +11,8 @@ User-agent: AdsBot-Google
 Allow: /
 Disallow: /search
 
+# Host Directive
+Host: https://www.milanghimire.info.np
 
-# Host
-Host:https://www.milanghimire.inf.np
-
-# Sitemaps
-Sitemap:https://www.milanghimire.inf.np/sitemap.xml
+# Sitemap Location
+Sitemap: https://www.milanghimire.info.np/sitemap.xml
