@@ -7,8 +7,8 @@ export default async function PostsPage() {
   return (
     <section className='pb-24 pt-40'>
       <head>
-      <meta name="robots" content="noindex" />
-        <link rel="canonical" href="https://www.milanghimire.info.np/posts" />
+      <meta name="robots" content="index, follow"/>
+              <link rel="canonical" href="https://www.milanghimire.info.np/posts" />
         
         
         </head> 
