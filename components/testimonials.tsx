@@ -88,10 +88,10 @@ const CustomTestimonials = () => {
   }, [currentSlide]);
 
   return (
-    <section className="py-24 pb-24 pt-32">
-      <div className="container max-w-3xl  mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-16 text-center">
-          <span className="text-sm text-gray-500 font-medium block mb-2">
+    <section className=" -mt-16 py-24 pb-24 pt-32">
+      <div className="container  -mt-12 max-w-3xl  mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mb-16 -mt-12 text-center">
+          <span className=" -mt-12 text-sm text-gray-500 font-medium block mb-2">
             TESTIMONIAL
           </span>
           <h2 className=" m-2 text-4xl font-bold">What our happy users say!</h2>
