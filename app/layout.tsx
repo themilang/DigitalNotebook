@@ -54,9 +54,29 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* Add metadata for /posts */}
+        {/* General Meta Tags */}
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://milanghimire.info.np/posts" />
+        <meta name="author" content="Milan Ghimire" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        {/* Canonical Link */}
+        <link rel="canonical" href="https://milanghimire.info.np" />
+
+        {/* Alternate Pages for Language */}
+        <link rel="alternate" hrefLang="en-US" href="https://milanghimire.info.np/posts" />
+
+        {/* OpenGraph Tags */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Milan Ghimire - Software Developer, ML/AI Enthusiast, and Tech Visionary" />
+        <meta property="og:description" content="Discover Milan Ghimire's expertise as a full-stack web developer and ML/AI enthusiast specializing in MERN technologies and building innovative solutions." />
+        <meta property="og:url" content="https://milanghimire.info.np" />
+        <meta property="og:image" content="https://media.licdn.com/dms/image/v2/D4E03AQEyGBjw8XIZiw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1683436186866?e=1739404800&v=beta&t=vHTQD-tbOzMlioE5o3CAYfNrY1ZHAXHuSvOLyPbTAmw" />
+
+        {/* Twitter Card Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Milan Ghimire - Software Developer, ML/AI Enthusiast, and Tech Visionary" />
+        <meta name="twitter:description" content="Discover Milan Ghimire's expertise as a full-stack web developer and ML/AI enthusiast specializing in MERN technologies and building innovative solutions." />
+        <meta name="twitter:image" content="https://media.licdn.com/dms/image/v2/D4E03AQEyGBjw8XIZiw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1683436186866?e=1739404800&v=beta&t=vHTQD-tbOzMlioE5o3CAYfNrY1ZHAXHuSvOLyPbTAmw" />
       </head>
       <body
         className={cn(
