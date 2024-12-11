@@ -12,6 +12,7 @@ const playfair = Playfair_Display({
   subsets: ['latin'],
   variable: '--font-serif',
 });
+const pubid = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID;
 
 export const metadata: Metadata = {
   title: 'Milan Ghimire - Software Developer, ML/AI Enthusiast, and Tech Visionary',
@@ -19,7 +20,8 @@ export const metadata: Metadata = {
     'Milan Ghimire is a computer engineer, full-stack web developer, and ML/AI enthusiast, specializing in MERN technologies and building innovative solutions for the future of technology.',
   openGraph: {
     title: 'Milan Ghimire - Software Developer, ML/AI Enthusiast, and Tech Visionary',
-    description: 'Discover Milan Ghimire\'s expertise as a full-stack web developer and ML/AI enthusiast.',
+    description:
+      "Discover Milan Ghimire's expertise as a full-stack web developer and ML/AI enthusiast.",
     url: 'https://milanghimire.info.np',
     type: 'website',
   },
@@ -39,7 +41,12 @@ export default function RootLayout({
         {/* Google AdSense Script */}
         <script
           async
-          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID}`}
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${pubid}`}
+          crossOrigin="anonymous"
+        ></script>
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-000000000"
           crossOrigin="anonymous"
         ></script>
       </head>
