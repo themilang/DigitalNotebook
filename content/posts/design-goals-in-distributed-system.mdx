@@ -1,0 +1,100 @@
+---
+title: Design Goals in Distributed Systems and Their Real-World Relevance
+summary: Understand the critical design goals that underpin distributed systems and how they are achieved in practical applications like Google Search, Netflix, and Nepal's Connect IPS payment gateway.
+author: 'Milan Ghimire'
+authorPhoto: "/images/authors/milan.png"
+publishedAt: '2024-12-11'
+---
+
+## Design Goals in Distributed Systems and Their Real-World Relevance
+
+Distributed systems aim to provide efficient, reliable, and scalable solutions to modern computing challenges. Achieving this involves meeting specific design goals that guide their architecture and implementation. Applications like Google Search, Netflix, and Nepal's Connect IPS exemplify these design principles in action.
+
+---
+
+## What Are the Design Goals of Distributed Systems?
+
+The **design goals** of distributed systems ensure that these systems meet the demands of scalability, fault tolerance, transparency, and performance. These goals play a critical role in making distributed systems robust and efficient for diverse applications.
+
+### Real-World Examples
+1. **Google Search**: Delivers fast and reliable search results by distributing computations across a global network.
+2. **Netflix**: Streams content seamlessly to millions of users with minimal latency.
+3. **Connect IPS (Nepal)**: Provides a centralized platform for interbank transfers and payments.
+
+---
+
+## Key Design Goals of Distributed Systems
+
+### 1. Scalability
+A distributed system should be able to grow seamlessly by adding more nodes without degrading performance.
+- **Google Search**: Expands search capabilities by scaling its data centers worldwide.
+- **Netflix**: Supports more users and streams during peak times by dynamically scaling its infrastructure.
+
+### 2. Reliability
+Distributed systems must ensure continuous service despite hardware or software failures.
+- **Netflix**: Uses redundant servers to maintain streaming even during outages.
+- **Connect IPS**: Ensures banking services remain operational with fault-tolerant mechanisms.
+
+### 3. Transparency
+Users interact with the system as though it were a single entity, despite its distributed nature.
+- **Google Search**: Users don’t see the behind-the-scenes data fetching and ranking from multiple servers.
+- **Connect IPS**: Users experience real-time fund transfers without understanding the complex interbank communications.
+
+### 4. Performance
+Distributed systems must handle tasks quickly and efficiently to meet user expectations.
+- **Netflix**: Minimizes buffering through geographically distributed content delivery networks (CDNs).
+- **Google Search**: Returns results in milliseconds, thanks to parallel processing.
+
+### 5. Security
+Ensuring data integrity and user privacy is critical, especially for sensitive applications.
+- **Connect IPS**: Uses encryption and authentication to protect financial transactions.
+
+---
+
+## Distributed Systems in Action
+
+### 1. Google Search
+Google embodies design goals by:
+- Distributing search indexes across global data centers.
+- Scaling its infrastructure to handle billions of queries daily.
+- Using fault-tolerant systems to maintain search availability.
+
+### 2. Netflix
+Netflix achieves these goals by:
+- Utilizing CDNs to deliver content from servers closest to users.
+- Implementing robust redundancy mechanisms to ensure uninterrupted streaming.
+- Dynamically scaling resources to meet user demand during premieres.
+<div style={{ width: "500px", margin: "auto" }}>
+  <img 
+    src="/images/Netflix.png" 
+    alt="Netflix Distributed System Infrastructure" 
+    style={{ width: "100%", height: "200px" }} 
+  />
+</div>
+### 3. Connect IPS in Nepal
+Connect IPS, a digital payment platform in Nepal, demonstrates these principles:
+- Supports seamless interbank transfers using scalable and transparent processes.
+- Ensures system reliability with regular backups and failover strategies.
+- Secures transactions through robust authentication and encryption methods.
+
+```js
+// Example of handling scalability in distributed systems
+const servers = ["Server1", "Server2", "Server3"];
+const requestHandler = async (server, request) => {
+  return new Promise((resolve) =>
+    setTimeout(() => resolve(`Request ${request} handled by ${server}`), 500)
+  );
+};
+
+// Distributing requests
+const distributeRequests = async (requests) => {
+  const results = await Promise.all(
+    requests.map((req, index) =>
+      requestHandler(servers[index % servers.length], req)
+    )
+  );
+  console.log(results);
+};
+
+distributeRequests([1, 2, 3, 4, 5]);
+// Output: ["Request 1 handled by Server1", "Request 2 handled by Server2", ...]

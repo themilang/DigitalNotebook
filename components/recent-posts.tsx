@@ -12,7 +12,7 @@ export default async function RecentPosts() {
         <Posts posts={posts} />
 
         <Link
-          href='https://www.milanghimire.info.np/posts'
+          href='/posts'
           className='mt-8 inline-flex decoration-blue-500 items-center gap-2 text-muted-foreground underline decoration-1 underline-offset-2 transition-colors hover:text-foreground'
         >
           <span>All Notes</span>

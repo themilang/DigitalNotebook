@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     openGraph: {
       title: metadata.title,
       description: metadata.summary,
-      url: `https://www.milanghimire.info.np/posts/${params.slug}`,
+      url: `/posts/${params.slug}`,
       images: [
         {
           url: metadata.image || '/default-image.jpg',

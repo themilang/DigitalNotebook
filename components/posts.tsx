@@ -9,7 +9,7 @@ export default function Posts({ posts }: { posts: PostMetadata[] }) {
       {posts.map(post => (
         <li key={post.slug}>
           <Link
-            href={`https://www.milanghimire.info.np/posts/${post.slug}`}
+            href={`/posts/${post.slug}`}
             className='flex flex-col justify-between gap-x-4 gap-y-1 sm:flex-row'
           >
             <div className='max-w-lg'>
