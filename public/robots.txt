@@ -1,0 +1,9 @@
+# *
+User-agent:*
+Allow: /
+
+# Host
+Host:https://www.milanghimire.inf.np
+
+# Sitemaps
+Sitemap:https://www.milanghimire.inf.np/sitemap.xml
