@@ -24,8 +24,13 @@ export default function Header() {
           </Link>
         </div>
 
-        {/* Hamburger Menu for Mobile */}
-        <div className='sm:hidden'>
+        {/* Hamburger Menu and Theme Toggle for Mobile */}
+        <div className='flex sm:hidden items-center'>
+          {/* Theme Toggle */}
+          <div className='mr-2'>
+            <ThemeToggle />
+          </div>
+          {/* Hamburger Menu */}
           <button
             onClick={toggleMenu}
             className='flex items-center justify-center w-10 h-10 text-muted-foreground hover:text-foreground'
@@ -60,10 +65,9 @@ export default function Header() {
           <li className='transition-colors hover:text-foreground'>
             <Link href='/contact' onClick={closeMenu}>Contact</Link>
           </li>
-          
         </ul>
 
-        {/* Theme Toggle */}
+        {/* Theme Toggle for Larger Screens */}
         <div className='hidden sm:block'>
           <ThemeToggle />
         </div>
