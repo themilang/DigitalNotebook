@@ -1,4 +1,1 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://www.milanghimire.info.np/sitemap.xml
+Allow: /posts
