@@ -8,7 +8,6 @@ import { ArrowLeftIcon } from '@radix-ui/react-icons';
 import { notFound } from 'next/navigation';
 import NewsletterForm from '@/components/newsletter-form';
 import SourceCodeForm from '@/components/SourceCodeForm';
-import MockAd from '@/components/MockAd';
 
 export async function generateStaticParams() {
   const posts = await getPosts();
@@ -123,7 +122,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
         </header>
 
         {/* Mock Ad */}
-        <MockAd />
+      
 
         {/* Content */}
         <main className="prose mt-16 dark:prose-invert">
@@ -131,7 +130,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
         </main>
 
         {/* Ad: Above Footer */}
-        <MockAd />
+      
 
         {/* Newsletter Form */}
         <footer className="mt-16">

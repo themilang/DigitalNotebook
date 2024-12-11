@@ -8,7 +8,6 @@ import { ArrowLeftIcon } from '@radix-ui/react-icons'
 import { getProjectBySlug, getProjects } from '@/lib/projects'
 import { notFound } from 'next/navigation'
 import SourceCodeForm from '@/components/SourceCodeForm'
-import MockAd from '@/components/MockAd'
 
 // Utility to calculate read time
 const calculateReadTime = (content: string) => {
@@ -122,7 +121,7 @@ export default async function Project({
             </div>
           </div>
         </header>
-        <MockAd />
+       
         {/* Source Code Form */}
         <div className="mt-2">
           <SourceCodeForm />
@@ -134,7 +133,7 @@ export default async function Project({
         </main>
 
         {/* Mock Ad */}
-        <MockAd />
+        
       </div>
     </section>
   )
