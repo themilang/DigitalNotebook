@@ -7,6 +7,7 @@ import './globals.css'
 import Providers from '@/components/providers'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
+import Testimonials from '@/components/testimonials'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
 const playfair = Playfair_Display({
@@ -36,6 +37,7 @@ export default function RootLayout({
         <Providers>
           <Header />
           <main className='grow ' >{children}</main>
+          <Testimonials/>
           <Footer />
         </Providers>
       </body>
