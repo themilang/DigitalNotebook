@@ -6,6 +6,12 @@ export default async function PostsPage() {
 
   return (
     <section className='pb-24 pt-40'>
+      <head>
+      <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://www.milanghimire.info.np/posts" />
+
+        
+        </head> 
       <div className='container max-w-3xl'>
         <h1 className='title mb-12'>Posts</h1>
 
