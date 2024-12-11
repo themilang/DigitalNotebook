@@ -1,11 +1,14 @@
 # *
 User-agent:*
 Allow: /
+Allow: /posts
+Allow: /posts/*
 
 # Allow Google Ads scripts and related resources
 User-agent: AdsBot-Google
 Allow: /
 Disallow: /search
+
 
 # Host
 Host:https://www.milanghimire.inf.np
