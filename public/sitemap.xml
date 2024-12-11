@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Add the /posts page -->
+  <url>
+    <loc>https://www.milanghimire.info.np/posts</loc>
+    <lastmod>2024-12-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Individual posts -->
   <url>
     <loc>https://www.milanghimire.info.np/posts/linear-regression-model-in-numpy</loc>
     <lastmod>2024-12-11</lastmod>
