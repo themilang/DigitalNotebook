@@ -115,7 +115,7 @@ const PricingPlan = () => {
 
                       {/* Plan Price */}
                       <div className="mb-6 text-center">
-                        <span className="text-4xl font-bold text-foreground">
+                        <span className="text-4xl font-bold text-white text-foreground">
                           ${plan.monthlyPrice}
                         </span>
                         <span className="text-muted-foreground">/month</span>
