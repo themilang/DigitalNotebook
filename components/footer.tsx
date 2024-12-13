@@ -76,11 +76,11 @@ export default function Footer() {
               <li>
                 {' '}
                 <Link
-                  href='/privacy'
+                  href='/privacy-policy'
                   className='text-sky-600 hover:underline'
                 >
                   {' '}
-                  Privacy
+                  Privacy Policy
                 </Link>
               </li>
               <li>
