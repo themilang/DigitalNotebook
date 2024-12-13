@@ -7,6 +7,7 @@
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
+
   <!-- Individual posts -->
   <url>
     <loc>https://www.milanghimire.info.np/posts/linear-regression-model-in-numpy</loc>
@@ -14,9 +15,8 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-   <url>
-    <loc>https://www.milanghimire.info.np/posts/design-goals-in-distributed-system
-</loc>
+  <url>
+    <loc>https://www.milanghimire.info.np/posts/design-goals-in-distributed-system</loc>
     <lastmod>2024-12-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -26,5 +26,51 @@
     <lastmod>2024-12-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <!-- Add the /about page -->
+  <url>
+    <loc>https://milanghimire.info.np/about</loc>
+    <lastmod>2024-12-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Add additional pages -->
+  <url>
+    <loc>https://www.milanghimire.info.np/courses</loc>
+    <lastmod>2024-12-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.milanghimire.info.np/workwithme</loc>
+    <lastmod>2024-12-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.milanghimire.info.np/contact</loc>
+    <lastmod>2024-12-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.milanghimire.info.np/disclaimer</loc>
+    <lastmod>2024-12-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.milanghimire.info.np/privacy-policy</loc>
+    <lastmod>2024-12-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.milanghimire.info.np/terms-and-conditions</loc>
+    <lastmod>2024-12-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>
