@@ -76,11 +76,11 @@ export default function Footer() {
               <li>
                 {' '}
                 <Link
-                  href='/privacy-policy'
+                  href='/privacy'
                   className='text-sky-600 hover:underline'
                 >
                   {' '}
-                  Privacy & Policy
+                  Privacy
                 </Link>
               </li>
               <li>
@@ -90,7 +90,7 @@ export default function Footer() {
                   className='text-sky-600 hover:underline'
                 >
                   {' '}
-                  Terms & Conditions
+                  Terms and Conditions
                 </Link>
               </li>
               <li>
@@ -100,7 +100,7 @@ export default function Footer() {
                   className='text-sky-600 hover:underline'
                 >
                   {' '}
-                  About Us
+                  About Me
                 </Link>
               </li>
             </ul>
