@@ -108,7 +108,7 @@ const PricingPlan = () => {
                   >
                     <div className="flex min-h-full flex-col px-6 py-8">
                       {/* Plan Name */}
-                      <h3 className="mb-4 text-center text-2xl font-semibold text-foreground">
+                      <h3 className="mb-4 text-center text-2xl font-semibold text-foreground text-white">
                         {plan.name}
                         <p className="text-xs text-gray-400">{plan.description}</p>
                       </h3>
