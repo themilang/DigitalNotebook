@@ -106,7 +106,7 @@ export default function NewsletterForm() {
             <div>
               <p className="text-xs text-blue-200">
                 We care about your data. Read our{" "}
-                <Link href="/privacy" className="font-bold text-white">
+                <Link href="/privacy-policy" className="font-bold text-white">
                   privacy&nbsp;policy.
                 </Link>
               </p>
