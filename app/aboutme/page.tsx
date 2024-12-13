@@ -174,7 +174,7 @@ export default function AboutUs() {
           <section className="mb-8 mt-12">
             <div className="p-6 text-center text-white bg-gradient-to-r from-black via-blue-900 to-blue-500   rounded-lg shadow-md">
               <h2 className="text-3xl font-semibold mb-3">Get in Touch</h2>
-              <p className="text-lg mb-6">
+              <p className="text-sm mb-6 text-gray-400">
                 Feel free to contact me for collaborations, consultations, or just to say hello!
               </p>
               <Link
