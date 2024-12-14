@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "sitemap": "npx next-sitemap",
-    "postbuild": "next-sitemap"
+    "postbuild": "next-sitemap next"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",

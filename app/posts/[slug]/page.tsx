@@ -1,13 +1,26 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { ClockIcon, EyeOpenIcon } from '@radix-ui/react-icons'; // Import icons
 
 import { formatDate } from '@/lib/utils';
 import MDXContent from '@/components/mdx-content';
-import { getPosts, getPostBySlug } from '@/lib/posts';
 import { ArrowLeftIcon } from '@radix-ui/react-icons';
+import { getPosts, getPostBySlug } from '@/lib/posts';
 import { notFound } from 'next/navigation';
 import NewsletterForm from '@/components/newsletter-form';
 import SourceCodeForm from '@/components/SourceCodeForm';
+
+// Utility to calculate read time
+const calculateReadTime = (content: string) => {
+  const words = content.split(/\s+/).length;
+  const wordsPerMinute = 200; // Average reading speed
+  return `${Math.ceil(words / wordsPerMinute)} min read`;
+};
+
+// Simulate fetching dynamic views (replace with actual API call if available)
+const fetchViews = async (slug: string): Promise<number> => {
+  return Math.floor(Math.random() * 1000) + 1; // Simulated random views
+};
 
 export async function generateStaticParams() {
   const posts = await getPosts();
@@ -64,11 +77,12 @@ export default async function Post({ params }: { params: { slug: string } }) {
 
   const { metadata, content } = post;
   const { title, image, author, authorPhoto, publishedAt, summary } = metadata;
+  const readTime = calculateReadTime(content); // Calculate read time
+  const views = await fetchViews(slug); // Fetch dynamic views
 
   return (
     <section className="pb-24 pt-32">
       <div className="container max-w-3xl">
-        {/* Back Link */}
         <Link
           href="/posts"
           className="mb-8 inline-flex items-center gap-2 text-sm font-light text-muted-foreground transition-colors hover:text-foreground"
@@ -77,60 +91,80 @@ export default async function Post({ params }: { params: { slug: string } }) {
           <span>Back to posts</span>
         </Link>
 
-        {/* Main Image */}
+        {/* Cover Image */}
         {image && (
-          <div className="relative mb-6 h-96 w-full overflow-hidden rounded-lg">
+          <div className="relative w-full h-64 mb-8">
             <Image
               src={image}
-              alt={title || ''}
-              className="object-cover"
+              alt={`${title} cover image`}
               fill
+              className="object-cover rounded-lg"
+              priority
             />
           </div>
         )}
 
-        {/* Header */}
-        <header className="flex flex-col mt-3">
-          {/* Title */}
-          <h1 className="text-4xl font-bold font-mono mb-2">{title}</h1>
+        {/* Title */}
+        <h1 className="text-3xl font-bold font-mono mb-6">{title}</h1>
 
-          {/* Metadata */}
-          <div className="mt-2 flex justify-between items-center text-sm text-muted-foreground">
-            <div className="flex items-center">
+        {/* Header Section */}
+        <header>
+          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center text-sm text-muted-foreground">
+            {/* Author and Metadata */}
+            <div className="flex items-center gap-3">
               {authorPhoto && (
                 <Image
                   src={authorPhoto}
-                  alt={author || ''}
+                  alt={`${author}'s photo`}
                   width={34}
                   height={34}
-                  className="rounded-full mr-3"
+                  className="rounded-full"
                 />
               )}
-              <span>
-                {author} / {formatDate(publishedAt ?? '')}
-              </span>
+              <div>
+                <span>
+                  {author} / {formatDate(publishedAt ?? '')}
+                </span>
+                {/* Read Time and Views */}
+                <div className="flex items-center gap-4 mt-2 sm:mt-0 sm:hidden">
+                  <div className="flex items-center gap-1">
+                    <ClockIcon className="w-4 h-4" />
+                    <span>{readTime}</span>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <EyeOpenIcon className="w-4 h-4" />
+                    <span>{views.toLocaleString()} views</span>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
 
-          {/* Summary */}
-          <h1 className="text-sm mt-4 text-gray-600">{summary}</h1>
-
-          {/* Source Code Form */}
-          <div className="mt-4">
-            <SourceCodeForm />
+            {/* Read Time and Views for Larger Screens */}
+            <div className="hidden sm:flex items-center gap-4">
+              <div className="flex items-center gap-1">
+                <ClockIcon className="w-4 h-4" />
+                <span>{readTime}</span>
+              </div>
+              <div className="flex items-center gap-1">
+                <EyeOpenIcon className="w-4 h-4" />
+                <span>{views.toLocaleString()} views</span>
+              </div>
+            </div>
           </div>
         </header>
 
-        {/* Mock Ad */}
-      
+        {/* Summary */}
+        <h2 className="text-sm mt-4 text-gray-600">{summary}</h2>
+
+        {/* Source Code Form */}
+        <div className="mt-2">
+          <SourceCodeForm />
+        </div>
 
         {/* Content */}
         <main className="prose mt-16 dark:prose-invert">
           <MDXContent source={content} />
         </main>
-
-        {/* Ad: Above Footer */}
-      
 
         {/* Newsletter Form */}
         <footer className="mt-16">
