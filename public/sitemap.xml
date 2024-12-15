@@ -85,4 +85,10 @@
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
+    <url>
+    <loc>https://www.milanghimire.info.np/achivements</loc>
+    <lastmod>2024-12-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>
