@@ -64,8 +64,8 @@ export default function Home() {
       {adsensePid && <AdSense pId={adsensePid} />}
 
       {/* Main Content */}
-      <section className="pb-20 pt-40">
-        <div className="container max-w-3xl">
+      <section className="pb-20 pt-40 dark:bg-gray-900">
+        <div className="container max-w-3xl ">
           <Intro />
           <RecentPosts />
           <RecentProjects />

@@ -36,7 +36,7 @@ export default function AboutUs() {
         <link rel="canonical" href="https://milanghimire.info.np/about" />
       </Head>
 
-      <section className="pb-24 pt-32">
+      <section className="pb-24 pt-32 dark:bg-gray-900">
         <div className="container max-w-3xl">
           {/* Back link */}
           <Link

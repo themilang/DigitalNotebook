@@ -46,7 +46,7 @@ export default async function Project({
   const views = await fetchViews(slug) // Fetch dynamic views
 
   return (
-    <section className="pb-24 pt-32">
+    <section className="dark:bg-gray-900 pb-24 pt-32">
       <div className="container max-w-3xl">
         <Link
           href="/projects"

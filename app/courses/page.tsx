@@ -27,7 +27,7 @@ const CoursePage = () => {
   ];
 
   return (
-    <section className="pb-24 pt-32">
+    <section className="dark:bg-gray-900 pb-24 pt-32">
       <div className="container max-w-5xl mx-auto">
         {/* Header */}
         <h2 className="mb-8 text-center text-3xl font-bold text-foreground">

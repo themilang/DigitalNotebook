@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export default function PrivacyPolicy() {
   return (
-    <section className="pb-24 pt-32">
+    <section className="dark:bg-gray-900 pb-24 pt-32">
       <div className="container max-w-3xl">
         {/* Back link */}
         <Link

@@ -5,7 +5,7 @@ export default async function PostsPage() {
   const posts = await getPosts()
 
   return (
-    <section className='pb-24 pt-40'>
+    <section className='dark:bg-gray-900 pb-24 pt-40'>
       <head>
       <meta name="robots" content="index, follow"/>
               <link rel="canonical" href="/posts" />
