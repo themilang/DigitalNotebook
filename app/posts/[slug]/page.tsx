@@ -1,97 +1,63 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import { ClockIcon, EyeOpenIcon } from '@radix-ui/react-icons'; // Import icons
+import Link from 'next/link'
+import Image from 'next/image'
+import { ClockIcon, EyeOpenIcon } from '@radix-ui/react-icons' // Import icons
 
-import { formatDate } from '@/lib/utils';
-import MDXContent from '@/components/mdx-content';
-import { ArrowLeftIcon } from '@radix-ui/react-icons';
+import { formatDate } from '@/lib/utils'
+import MDXContent from '@/components/mdx-content'
+import { ArrowLeftIcon } from '@radix-ui/react-icons'
 import { getPosts, getPostBySlug } from '@/lib/posts';
-import { notFound } from 'next/navigation';
-import NewsletterForm from '@/components/newsletter-form';
-import SourceCodeForm from '@/components/SourceCodeForm';
+import { notFound } from 'next/navigation'
+import SourceCodeForm from '@/components/SourceCodeForm'
 
 // Utility to calculate read time
 const calculateReadTime = (content: string) => {
-  const words = content.split(/\s+/).length;
-  const wordsPerMinute = 200; // Average reading speed
-  return `${Math.ceil(words / wordsPerMinute)} min read`;
-};
+  const words = content.split(/\s+/).length
+  const wordsPerMinute = 200 // Average reading speed
+  return `${Math.ceil(words / wordsPerMinute)} min read`
+}
 
 // Simulate fetching dynamic views (replace with actual API call if available)
 const fetchViews = async (slug: string): Promise<number> => {
-  return Math.floor(Math.random() * 1000) + 1; // Simulated random views
-};
+  return Math.floor(Math.random() * 1000) + 1 // Simulated random views
+}
 
 export async function generateStaticParams() {
-  const posts = await getPosts();
-  const slugs = posts.map((post) => ({ slug: post.slug }));
+  const postsgetposts = await getPosts()
+  const slugs = postsgetposts.map(post => ({ slug: post.slug }))
 
-  return slugs;
+  return slugs
 }
 
-// Dynamic Metadata Function
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const post = await getPostBySlug(params.slug);
+export default async function post({
+  params
+}: {
+  params: { slug: string }
+}) {
+  const { slug } = params
+  const post = await getPostBySlug(slug)
 
   if (!post) {
-    return {
-      title: 'Post Not Found',
-      description: 'The post you are looking for does not exist.',
-    };
+    notFound()
   }
 
-  const { metadata } = post;
-
-  return {
-    title: metadata.title,
-    description: metadata.summary,
-    openGraph: {
-      title: metadata.title,
-      description: metadata.summary,
-      url: `/posts/${params.slug}`,
-      images: [
-        {
-          url: metadata.image || '/default-image.jpg',
-          alt: metadata.title,
-        },
-      ],
-      type: 'article',
-      publishedTime: metadata.publishedAt,
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: metadata.title,
-      description: metadata.summary,
-      images: [metadata.image || '/default-image.jpg'],
-    },
-  };
-}
-
-export default async function Post({ params }: { params: { slug: string } }) {
-  const { slug } = params;
-  const post = await getPostBySlug(slug);
-
-  if (!post) {
-    notFound();
-  }
-
-  const { metadata, content } = post;
-  const { title, image, author, authorPhoto, publishedAt, summary } = metadata;
-  const readTime = calculateReadTime(content); // Calculate read time
-  const views = await fetchViews(slug); // Fetch dynamic views
+  const { metadata, content } = post
+  const { title, image, author, authorPhoto, publishedAt } = metadata
+  const readTime = calculateReadTime(content) // Calculate read time
+  const views = await fetchViews(slug) // Fetch dynamic views
 
   return (
     <section className="pb-24 pt-32">
       <div className="container max-w-3xl">
         <Link
-          href="/posts"
+          href="/postsgetposts"
           className="mb-8 inline-flex items-center gap-2 text-sm font-light text-muted-foreground transition-colors hover:text-foreground"
         >
           <ArrowLeftIcon className="h-5 w-5" />
-          <span>Back to posts</span>
+          <span>Back to postsgetposts</span>
         </Link>
 
-        {/* Cover Image */}
+       
+        {/* Cover Image from Metadata */}
         {image && (
           <div className="relative w-full h-64 mb-8">
             <Image
@@ -103,9 +69,12 @@ export default async function Post({ params }: { params: { slug: string } }) {
             />
           </div>
         )}
+         {/* Title */}
+         <h1 className="text-3xl font-bold font-mono mb-6">{title}</h1>
 
-        {/* Title */}
-        <h1 className="text-3xl font-bold font-mono mb-6">{title}</h1>
+
+        {/* Mock Ad */}
+       
 
         {/* Header Section */}
         <header>
@@ -138,7 +107,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
                 </div>
               </div>
             </div>
-
+          
             {/* Read Time and Views for Larger Screens */}
             <div className="hidden sm:flex items-center gap-4">
               <div className="flex items-center gap-1">
@@ -152,10 +121,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
             </div>
           </div>
         </header>
-
-        {/* Summary */}
-        <h2 className="text-sm mt-4 text-gray-600">{summary}</h2>
-
+       
         {/* Source Code Form */}
         <div className="mt-2">
           <SourceCodeForm />
@@ -166,11 +132,9 @@ export default async function Post({ params }: { params: { slug: string } }) {
           <MDXContent source={content} />
         </main>
 
-        {/* Newsletter Form */}
-        <footer className="mt-16">
-          <NewsletterForm />
-        </footer>
+        {/* Mock Ad */}
+        
       </div>
     </section>
-  );
+  )
 }
