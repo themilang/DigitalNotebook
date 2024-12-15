@@ -133,9 +133,7 @@ export default function PrivacyPolicy() {
           </ul>
         </section>
 
-        <footer className="mt-8 border-t pt-4 text-gray-500 text-sm">
-          <p>&copy; 2024 <Link href="/" className="text-blue-600 hover:underline">milanghimire.info.np</Link>. All rights reserved.</p>
-        </footer>
+        
       </div>
     </section>
   )
