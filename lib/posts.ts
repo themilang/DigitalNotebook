@@ -13,6 +13,7 @@ export type PostMetadata = {
 
   title?: string
   summary?: string
+  description?:string
   image?: string
   author?: string
   authorPhoto?:string
