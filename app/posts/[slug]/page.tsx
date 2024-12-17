@@ -41,7 +41,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
   const views = await fetchViews(slug);
 
   // Ensure the image URL is absolute for sharing
-  const fullImageUrl = `https://yourdomain.com${image}`;
+  const fullImageUrl = `https://milanghimire.info.np${image}`;
 
   return (
     <>
@@ -54,7 +54,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description || "A detailed blog post."} />
         <meta property="og:image" content={fullImageUrl} />
-        <meta property="og:url" content={`https://yourdomain.com/posts/${slug}`} />
+        <meta property="og:url" content={`https://milanghimire.info.np/posts/${slug}`} />
         <meta property="og:type" content="article" />
 
         {/* Twitter Card Tags */}
