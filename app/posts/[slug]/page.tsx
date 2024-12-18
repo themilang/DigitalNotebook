@@ -8,6 +8,7 @@ import { ArrowLeftIcon } from '@radix-ui/react-icons'
 import { getPosts, getPostBySlug } from '@/lib/posts';
 import { notFound } from 'next/navigation'
 import SourceCodeForm from '@/components/SourceCodeForm'
+import Head from 'next/head'
 
 // Utility to calculate read time
 const calculateReadTime = (content: string) => {
@@ -41,12 +42,31 @@ export default async function post({
   }
 
   const { metadata, content } = post
-  const { title, image, author, authorPhoto, publishedAt } = metadata
+  const { title, image, summary , author, authorPhoto, publishedAt } = metadata
   const readTime = calculateReadTime(content) // Calculate read time
   const views = await fetchViews(slug) // Fetch dynamic views
 
   return (
+    <>
+       <Head>
+        <title>{title}</title>
+        <meta name="description" content={summary} />
+        
+        {/* Open Graph Tags */}
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={summary} />
+        <meta property="og:image" content={`https://www.milanghimire.info.np${image}`} />
+        <meta property="og:url" content={`https://www.milanghimire.info.np/posts/${slug}`} />
+        <meta property="og:type" content="article" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={summary} />
+        <meta name="twitter:image" content={`https://www.milanghimire.info.np${image}`} />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Head>
     <section className="dark:bg-gray-900 pb-24 pt-32">
+
       <div className="container max-w-3xl">
         <Link
           href="/postsgetposts"
@@ -136,5 +156,6 @@ export default async function post({
         
       </div>
     </section>
+    </>
   )
 }
