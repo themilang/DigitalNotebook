@@ -22,7 +22,6 @@ export const metadata: Metadata = {
     description:
       "Discover Milan Ghimire's expertise as a full-stack web developer and ML/AI enthusiast.",
     url: 'https://milanghimire.info.np',
-    type: 'website',
   },
 };
 
@@ -31,11 +30,24 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  // Safely extract values from metadata with type casting
+  const title = (metadata.title || '') as string;
+  const description = (metadata.description || '') as string;
+  const ogTitle = (metadata.openGraph?.title || title) as string;
+  const ogDescription = (metadata.openGraph?.description || description) as string;
+  const ogUrl = (metadata.openGraph?.url || 'https://milanghimire.info.np') as string;
+
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
         {/* General Meta Tags */}
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        {/* Open Graph and Twitter Fallbacks */}
+        <meta name="description" content={description} />
+        <meta property="og:title" content={ogTitle} />
+        <meta property="og:description" content={ogDescription} />
+        <meta property="og:url" content={ogUrl} />
 
         {/* Google AdSense Script */}
         <meta name="google-site-verification" content="59LqVUnp07UYOy3uNr-unyFZnhgb48zqRjvAN_7XSkE" />
