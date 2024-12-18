@@ -8,7 +8,6 @@ import { ArrowLeftIcon } from '@radix-ui/react-icons'
 import { getPosts, getPostBySlug } from '@/lib/posts';
 import { notFound } from 'next/navigation'
 import SourceCodeForm from '@/components/SourceCodeForm'
-import Head from 'next/head'
 
 // Utility to calculate read time
 const calculateReadTime = (content: string) => {
@@ -29,7 +28,7 @@ export async function generateStaticParams() {
   return slugs
 }
 
-export default async function Post({
+export default async function post({
   params
 }: {
   params: { slug: string }
@@ -42,29 +41,22 @@ export default async function Post({
   }
 
   const { metadata, content } = post
-  const { title, image, author, authorPhoto, publishedAt, summary } = metadata
+  const { title, image, author, authorPhoto, publishedAt } = metadata
   const readTime = calculateReadTime(content) // Calculate read time
   const views = await fetchViews(slug) // Fetch dynamic views
 
   return (
     <section className="dark:bg-gray-900 pb-24 pt-32">
-      <Head>
-        <title>{title} - Your Website Name</title>
-        <meta name="description" content={summary || 'A detailed blog post.'} />
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={summary || 'A detailed blog post.'} />
-        <meta property="og:image" content={image} />
-        <meta property="og:url" content={`https://yourwebsite.com/posts/${slug}`} />
-      </Head>
       <div className="container max-w-3xl">
         <Link
-          href="/posts"
+          href="/postsgetposts"
           className="mb-8 inline-flex items-center gap-2 text-sm font-light text-muted-foreground transition-colors hover:text-foreground"
         >
           <ArrowLeftIcon className="h-5 w-5" />
-          <span>Back to posts</span>
+          <span>Back to postsgetposts</span>
         </Link>
 
+       
         {/* Cover Image from Metadata */}
         {image && (
           <div className="relative w-full h-64 mb-8">
@@ -77,8 +69,12 @@ export default async function Post({
             />
           </div>
         )}
-        {/* Title */}
-        <h1 className="text-3xl font-bold font-mono mb-6">{title}</h1>
+         {/* Title */}
+         <h1 className="text-3xl font-bold font-mono mb-6">{title}</h1>
+
+
+        {/* Mock Ad */}
+       
 
         {/* Header Section */}
         <header>
@@ -88,7 +84,7 @@ export default async function Post({
               {authorPhoto && (
                 <Image
                   src={authorPhoto}
-                  alt={`Photo of ${author}`}
+                  alt={`${author}'s photo`}
                   width={34}
                   height={34}
                   className="rounded-full"
@@ -111,7 +107,7 @@ export default async function Post({
                 </div>
               </div>
             </div>
-
+          
             {/* Read Time and Views for Larger Screens */}
             <div className="hidden sm:flex items-center gap-4">
               <div className="flex items-center gap-1">
@@ -125,25 +121,7 @@ export default async function Post({
             </div>
           </div>
         </header>
-
-        {/* Share Buttons */}
-        <div className="mt-4 flex gap-4">
-          <a
-            href={`mailto:?subject=${encodeURIComponent(title??"")}&body=${encodeURIComponent(summary??"")}%0A%0ARead more: https://yourwebsite.com/posts/${slug}`}
-            className="btn btn-secondary"
-          >
-            Share via Email
-          </a>
-          <a
-            href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(`https://yourwebsite.com/posts/${slug}`)}&text=${encodeURIComponent(title)}`}
-            className="btn btn-secondary"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Share on Twitter
-          </a>
-        </div>
-
+       
         {/* Source Code Form */}
         <div className="mt-2">
           <SourceCodeForm />
@@ -153,6 +131,9 @@ export default async function Post({
         <main className="prose mt-16 dark:prose-invert">
           <MDXContent source={content} />
         </main>
+
+        {/* Mock Ad */}
+        
       </div>
     </section>
   )
