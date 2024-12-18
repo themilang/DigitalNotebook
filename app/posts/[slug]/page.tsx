@@ -29,10 +29,10 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   const { title, summary, image } = post.metadata;
 
   return {
-    title: `${title} - Milan Ghimire`,
+    title: title,
     description: summary,
     openGraph: {
-      title: `${title} - Milan Ghimire`,
+      title: title,
       description: summary,
       images: [
         {
@@ -46,7 +46,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       type: 'article',
     },
     twitter: {
-      title: `${title} - Milan Ghimire`,
+      title: title,
       description: summary,
       images: [`https://www.milanghimire.info.np${image}`],
       card: 'summary_large_image',
