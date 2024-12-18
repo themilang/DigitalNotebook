@@ -9,7 +9,7 @@ export default async function RecentPosts() {
     <section className="pb-24">
       <div>
         {/* Section Title */}
-        <h2 className="text-xl mb-12 font-mono font-bold text-gray-800">
+        <h2 className="text-xl mb-12 font-mono font-bold">
           Recent Posts
         </h2>
 
