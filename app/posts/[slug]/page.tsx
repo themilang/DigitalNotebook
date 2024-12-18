@@ -8,7 +8,6 @@ import { ArrowLeftIcon } from '@radix-ui/react-icons'
 import { getPosts, getPostBySlug } from '@/lib/posts';
 import { notFound } from 'next/navigation'
 import SourceCodeForm from '@/components/SourceCodeForm'
-import Head from 'next/head'
 
 // Utility to calculate read time
 const calculateReadTime = (content: string) => {
@@ -42,20 +41,12 @@ export default async function post({
   }
 
   const { metadata, content } = post
-  const { title, image,summary, author, authorPhoto, publishedAt } = metadata
+  const { title, image, author, authorPhoto, publishedAt } = metadata
   const readTime = calculateReadTime(content) // Calculate read time
   const views = await fetchViews(slug) // Fetch dynamic views
 
   return (
     <section className="dark:bg-gray-900 pb-24 pt-32">
-       <Head>
-        <title>{title} - milanghimire.info.np</title>
-        <meta name="description" content={summary || 'A detailed blog post.'} />
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={summary || 'A detailed blog post.'} />
-        <meta property="og:image" content={image} />
-        <meta property="og:url" content={`https://milanghimire.info.np/posts/${slug}`} />
-      </Head>
       <div className="container max-w-3xl">
         <Link
           href="/postsgetposts"
