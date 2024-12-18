@@ -69,7 +69,7 @@ export default async function post({
 
       <div className="container max-w-3xl">
         <Link
-          href="/postsgetposts"
+          href="/posts"
           className="mb-8 inline-flex items-center gap-2 text-sm font-light text-muted-foreground transition-colors hover:text-foreground"
         >
           <ArrowLeftIcon className="h-5 w-5" />
