@@ -9,7 +9,7 @@ const CoursePage = () => {
 
   const courses = [
     {
-      name: "JWT Authentication",
+      name: "JWT Authentication MERN",
       description: "Learn JWT Authentication from basics to advanced concepts.",
       price: "$13",
       featured: true,
