@@ -134,10 +134,7 @@ export default async function post({
             </div>
           </header>
 
-          {/* Source Code Form */}
-          <div className="mt-2">
-            <SourceCodeForm />
-          </div>
+        
 
           {/* Content */}
           <main className="prose mt-16 dark:prose-invert">
