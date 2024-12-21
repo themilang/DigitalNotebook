@@ -5,11 +5,14 @@ import PostsWithSearch from '@/components/posts-with-search';
 export default async function PostsPage() {
   const posts = await getPosts();
 
+  // Dynamically generate the title based on the number of posts
+  const dynamicTitle = `All ${posts.length} Posts | Milan Ghimire`;
+
   return (
     <>
       {/* Dynamic Head with Meta Tags */}
       <Head>
-        <title>All Posts | Milan Ghimire</title>
+        <title>{dynamicTitle}</title>
         <meta
           name="description"
           content="Discover insightful blog posts on various topics by Milan Ghimire. Stay updated with the latest articles."
@@ -18,7 +21,7 @@ export default async function PostsPage() {
         <link rel="canonical" href="https://www.milanghimire.info.np/posts" />
 
         {/* Open Graph / Facebook */}
-        <meta property="og:title" content="All Posts | Milan Ghimire" />
+        <meta property="og:title" content={dynamicTitle} />
         <meta
           property="og:description"
           content="Discover insightful blog posts on various topics by Milan Ghimire. Stay updated with the latest articles."
@@ -28,7 +31,7 @@ export default async function PostsPage() {
         <meta property="og:type" content="website" />
 
         {/* Twitter */}
-        <meta name="twitter:title" content="All Posts | Milan Ghimire" />
+        <meta name="twitter:title" content={dynamicTitle} />
         <meta
           name="twitter:description"
           content="Discover insightful blog posts on various topics by Milan Ghimire. Stay updated with the latest articles."
